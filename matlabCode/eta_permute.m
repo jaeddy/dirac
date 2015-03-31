@@ -49,13 +49,14 @@ eta_rand_counts = zeros(M,1);
 
 % For small sample sizes, search through all possible permutations (if
 % fewer than user-defined number of permutations
-if nchoosek(N,N_1) < num_permut
-    fullPermute = 1;
-    n = 1:N;
-    permuteMat = nchoosek(n,N_1);
-    num_permut = size(permuteMat,1);
-else fullPermute = 0;
-end
+% !!Removed this for now: I think it's more correct to sample w/ replacement
+% if nchoosek(N,N_1) < num_permut
+%    fullPermute = 1;
+%    n = 1:N;
+%    permuteMat = nchoosek(n,N_1);
+%    num_permut = size(permuteMat,1);
+% else fullPermute = 0;
+% end
 
 for p = 1:num_permut
     tic
